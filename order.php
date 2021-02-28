@@ -1,0 +1,117 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<!--
+	Awesome Responsive Template
+	templatestock.co
+-->
+<html>
+<head>
+	<title>MyERP Portal</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	<!-- Goggle Font -->
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+	<!-- Font Css -->
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Animation Css -->
+	<link rel="stylesheet" href="css/animate.css">
+
+
+</head>
+<body>
+<!-- Header -->
+<div class="header-div">
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header logo-div bounceInLeft wow" data-wow-duration="2s">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index1.html">ERP Portal</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse top-right-menu-ul bounceInRight wow" id="bs-example-navbar-collapse-1" data-wow-duration="4s">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index1.html">Features</a></li>
+        <li><a href="index1.html">Products</a></li>
+        <li><a href="order.php">Orders</a></li>
+        <li><a href="index1.html">About</a></li>
+        <li><a href="index1.html">Prices</a></li>
+        <li><a href="index1.html">Testimonial</a></li>
+        <li><a href="logou.php">Logout</a></li>
+      </ul>
+    </div><!-- End navbar-collapse -->
+  </div><!-- End container -->
+</nav>
+
+<div class="container wow bounceInDown" data-wow-duration="5s">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8 text-center slide-text">
+			<h1>ERP System</h1>
+			<p>Here your organization can make all the necessary transactions easily and manage them with minimal effort</p>
+		</div><!-- End col-md-8-->
+		<div class="col-md-offset-2"></div><!-- End col-md-offset-2 -->
+	</div><!-- End Row -->
+</div><!-- End Contanier -->
+
+</div><!-- End header-div -->
+
+<h1 class="text-center">Orders</h1>
+<br>
+<br>
+<div class="container-fluid">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+        
+      <table class="table table-bordered table-dark table-hover table-bordered my-5 ">
+        <thead class="thead-dark">
+          <tr class= "text-success table-dark">
+            <th>Order_id</th>
+            <th>Product_id</th>
+            <th>Vendor_id</th>
+            <th>Employee_id</th>
+            <th>Status</th>
+            <th colspan="4">Actions</th>
+            
+          </tr>
+        </thead>
+        <?php
+        $con=mysqli_connect('localhost','root','','erpcomp');
+         $asd="CALL `ords`()";
+        $query=mysqli_query($con,$asd);
+        while($row=mysqli_fetch_array($query)){
+        ?>
+        <tbody>
+          <tr>
+            <td><?php echo $row['order_id']; ?></td>
+            <td><?php echo $row['product_id']; ?></td>
+            <td><?php echo $row['vendor_id']; ?></td>
+            <td><?php echo $row['employee_id']; ?></td>
+            <td><?php echo $row['status']; ?></td>
+            
+            
+          </tr>
+        </tbody>
+        <?php }?>
+      </table>
+    </div>
+      </div>
+    </div>
+
+
+
+</body>
+</html>
