@@ -13,11 +13,11 @@ $num1=mysqli_num_rows($result1);
 if($num==1)
 {
 	$_SESSION['em']=$email;
-	header("Location:adm.php");
+	header("Location:index1.php");
 }
 else if($num1=1)
 {$_SESSION['em']=$email;
-	header("Location:index1.php");
+	header("Location:adm.php");
 
 }
 else

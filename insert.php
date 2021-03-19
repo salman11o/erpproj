@@ -76,37 +76,7 @@ session_start();
         <div class="container-fluid">
           <div class="row justify-content-center">
         
-      <table class="table table-bordered table-dark table-hover table-bordered my-5 ">
-        <thead class="thead-dark">
-          <tr class= "text-success table-dark">
-            <th>Order_id</th>
-            <th>Product_id</th>
-            <th>Vendor_id</th>
-            <th>Employee_id</th>
-            <th>Status</th>
-            <th colspan="4">Actions</th>
-            
-          </tr>
-        </thead>
-        <?php
-        $con=mysqli_connect('localhost','root','','erpcomp');
-         $asd="CALL `ords`()";
-        $query=mysqli_query($con,$asd);
-        while($row=mysqli_fetch_array($query)){
-        ?>
-        <tbody>
-          <tr>
-            <td><?php echo $row['order_id']; ?></td>
-            <td><?php echo $row['product_id']; ?></td>
-            <td><?php echo $row['vendor_id']; ?></td>
-            <td><?php echo $row['employee_id']; ?></td>
-            <td><?php echo $row['status']; ?></td>
-            
-            
-          </tr>
-        </tbody>
-        <?php }?>
-      </table>
+      
     </div>
       </div>
     </div>
